@@ -5,8 +5,8 @@ class Program
 {
     private const string BASE_URL = "https://xts.rmoneyindia.co.in:3000";
     private const string SOCKET_URL = "https://xts.rmoneyindia.co.in:3000";
-    private const string API_KEY = "7c9721e8c2fb4fd9ee9577";
-    private const string SECRET_KEY = "Ifff847#oD";
+    private const string API_KEY = "7c972gfh76hvfd9ee9577";
+    private const string SECRET_KEY = LIfUf757#oD";
 
     static async Task Main(string[] args)
     {
@@ -129,10 +129,3 @@ class Program
     }
 }
 
-
-/*
-API_URL - "https://xts.rmoneyindia.co.in:3000"
-API_SOURCE - "WEBAPI"
-API Key - 7c9721e8c2fb4fd9ee9577
-API Secret - Ifff847#oD
-*/
