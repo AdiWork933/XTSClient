@@ -35,7 +35,7 @@ This repository is intentionally kept minimal: it provides a clean baseline clie
  .
  ├── README.md
  ├── .gitignore
- └── XTSApiClient/
+ └── XTSClient/
      ├── Models/
      │   ├── InstrumentModels.cs
      │   ├── LoginModels.cs
