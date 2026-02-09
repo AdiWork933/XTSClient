@@ -253,6 +253,34 @@ await socket.DisconnectAsync();
   - If your API returns values with unexpected formatting/culture, you may need to adjust parsing.
 
 ---
+## Working
+```
+┌─────────────────────────────────────┐
+│      Program.cs (Main Entry)        │
+└────────────┬────────────────────────┘
+             │
+             ├─ Step 1: Create XTSClient
+             │
+             ├─ Step 2: Call MarketDataLoginAsync()
+             │         └─ POST /apimarketdata/auth/login
+             │         └─ Store Token + UserID
+             │
+             ├─ Step 3: Call GetTop5Nifty50OHLCAsync()
+             │         └─ For each stock:
+             │            GET /apimarketdata/instruments/ohlc
+             │            └─ Parse CSV or JSON response
+             │            └─ Return List<OHLCBar>
+             │
+             ├─ Step 4: CsvSaver.SaveOhlc()
+             │         └─ Write OHLC_*.csv files
+             │
+             └─ Step 5: StartSocketStreaming()
+                       └─ MarketDataSocket.ConnectAsync()
+                       └─ SubscribeAsync(instruments)
+                       └─ Emit OnTouchlineData/OnMarketDepthData events
+                       └─ AppendStreamEvent() to CSV
+```
+---
 
 ## Notes for contributors / next steps
 
